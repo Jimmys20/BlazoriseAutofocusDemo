@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<TextEdit @ref="@textEditRef" />
+
+@code {
+  private TextEdit textEditRef;
+
+  protected override async Task OnAfterRenderAsync(bool firstRender)
+  {
+    if (firstRender)
+    {
+      await textEditRef.FocusAsync();
+    }
+  }
+
+  //protected override Task OnAfterRenderAsync(bool firstRender)
+  //{
+  //  if (firstRender)
+  //  {
+  //    textEditRef.Focus();
+  //  }
+
+  //  return Task.CompletedTask;
+  //}
+}
