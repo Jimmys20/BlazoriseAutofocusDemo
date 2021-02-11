@@ -5,6 +5,7 @@
 Welcome to your new app.
 
 <TextEdit @ref="@textEditRef" />
+<Button Color="Color.Primary" Clicked="async ()=> { await textEditRef.FocusAsync(); }">Focus</Button>
 
 @code {
   private TextEdit textEditRef;
