@@ -12,9 +12,21 @@
 
   <link href="_content/Blazorise/blazorise.css" rel="stylesheet" />
   <link href="_content/Blazorise.Bootstrap/blazorise.bootstrap.css" rel="stylesheet" />
+  <link href="_content/Blazorise.Snackbar/blazorise.snackbar.css" rel="stylesheet" />
+  <style>
+    .snackbar-above-footer.snackbar-show {
+      transform: translateY(-3.5rem);
+    }
 
-  <link href="css/app.css" rel="stylesheet" />
-  <link href="BlazoriseAutofocusDemo.Client.styles.css" rel="stylesheet" />
+    @media (min-width: 768px) {
+      .snackbar-above-footer.snackbar-show {
+        transform: translate(-50%, -5rem);
+      }
+    }
+  </style>
+
+  <!--<link href="css/app.css" rel="stylesheet" />
+  <link href="BlazoriseAutofocusDemo.Client.styles.css" rel="stylesheet" />-->
   <link href="manifest.json" rel="manifest" />
   <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
 </head>
@@ -22,11 +34,11 @@
 <body>
   <div id="app">Loading...</div>
 
-  <div id="blazor-error-ui">
+  <!--<div id="blazor-error-ui">
     An unhandled error has occurred.
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
-  </div>
+  </div>-->
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -1,30 +1,30 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<Validation @bind-Status="validationStatus" Validator="ValidationRule.IsNotEmpty">
+  <TextEdit @bind-Text="text">
+    <Feedback>
+      <ValidationError>Error Message</ValidationError>
+    </Feedback>
+  </TextEdit>
+</Validation>
 
-Welcome to your new app.
-
-<TextEdit @ref="@textEditRef" />
-<Button Color="Color.Primary" Clicked="async ()=> { await textEditRef.FocusAsync(); }">Focus</Button>
+<Button Color="Color.Primary" Clicked="Fetch">Fetch</Button>
 
 @code {
-  private TextEdit textEditRef;
+  private ValidationStatus validationStatus = ValidationStatus.None;
+  private string text;
 
-  protected override async Task OnAfterRenderAsync(bool firstRender)
+  private async Task Fetch()
   {
-    if (firstRender)
-    {
-      await textEditRef.FocusAsync();
-    }
+    await Task.CompletedTask;
+
+    validationStatus = ValidationStatus.Error;
   }
 
-  //protected override Task OnAfterRenderAsync(bool firstRender)
-  //{
-  //  if (firstRender)
-  //  {
-  //    textEditRef.Focus();
-  //  }
-
-  //  return Task.CompletedTask;
-  //}
+  public class DummyHandler : IValidationHandler
+  {
+    public void Validate(IValidation validation, object newValidationValue)
+    {
+    }
+  }
 }
